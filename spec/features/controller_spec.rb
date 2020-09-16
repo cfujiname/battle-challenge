@@ -12,12 +12,4 @@ feature 'View Player 2 HP' do
   end
 end
 
-feature 'Win a battle' do
-  scenario 'attack player 2 and get confirmation' do
-    sign_in_and_play
-    click_button 'Attack'
-    expect(page).to have_content 'Bob attacked Builder'
-  end
 
-
-end

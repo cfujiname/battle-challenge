@@ -4,20 +4,26 @@ describe Player do
   subject(:bob) { Player.new('Bob')}
   subject(:builder)  { Player.new('Builder') }
 
-  describe '#name' do
-    it 'returns the name of the Player' do
-      expect(builder.name).to eq('Builder')
-    end
+describe '#name' do
+  it 'returns the name of the Player' do
+    expect(builder.name).to eq('Builder')
   end
+end
 
 describe "#hit_points" do
 
-    it 'returns player\'s hit points' do
-      expect(builder.hit_points).to eq described_class::DEFAULT_HP
-    end
+  it 'returns player\'s hit points' do
+    expect(builder.hit_points).to eq described_class::DEFAULT_HP
+  end
+end
+
+describe '#attack' do
+ 
+  it 'damages the player' do
+    expect(builder).to receive(:receive_damage)
+    bob.attack(builder)
   end
 
-  describe '#attack' do
   it 'reduces the hitpoints of player 2 by 10 after attack' do
     expect{ bob.attack(builder) }.to change { builder.hit_points }.by (-10)
   end
