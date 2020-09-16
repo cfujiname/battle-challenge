@@ -1,8 +1,12 @@
 
 require 'sinatra/base'
-
+require_relative './lib/player'
 
 class Battle < Sinatra::Base
+
+  $player_1_name = @player_1_name
+  $player_2_name = @player_2_name
+
   enable :sessions
   run! if app_file == $0
 
