@@ -16,4 +16,12 @@ describe "#hit_points" do
     expect(builder.hit_points).to eq described_class::DEFAULT_HP
   end
 end
+<<<<<<< HEAD
+=======
+
+describe '#attack' do
+
+  it 'reduces the hitpoints of player 2 by 10 after attack' do
+    expect{ bob.attack(builder) }.to change { builder.hit_points }.by (-10)
+>>>>>>> 80d0667ca9f8e71937432918c7fc13331ad7a374
   end
